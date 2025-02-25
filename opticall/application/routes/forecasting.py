@@ -22,20 +22,27 @@ forecasting_bp = Blueprint('forecasting', __name__)
 
 @forecasting_bp.route('/')
 def forecast():
-    return render_template('forecasting/.html')
+    data = {}
+    data['page_title'] = 'Pronóstico de llamadas'
+    return render_template('forecasting/forecast.html', data=data)
 
 @forecasting_bp.route('/upload')
 def upload():
-    return render_template('forecasting/upload.html')
+    data = {}
+    data['page_title'] = 'Carga de archivos '
+    return render_template('forecasting/upload.html', data=data)
 
 @forecasting_bp.route('/results')
 def results():
-    forecast_data = {}
-    return render_template('forecasting/results.html', forecast_data=forecast_data)
+    data = {}
+    data['page_title'] = 'Resultados'
+    return render_template('forecasting/results.html', data=data)
 
 @forecasting_bp.route('/configure')
 def configure():
-    return render_template('forecasting/configure.html')
+    data = {}
+    data['page_title'] = 'Configuración'
+    return render_template('forecasting/configure.html', data=data)
 
 
     

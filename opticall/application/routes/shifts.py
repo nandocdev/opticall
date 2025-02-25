@@ -22,17 +22,30 @@ shifts_bp = Blueprint('shifts', __name__)
 
 @shifts_bp.route('/')
 def home():
-    return render_template('shifts/shifts.html')
+    data = {}
+    data['page_title'] = 'Gestión de turnos'
+    return render_template('shifts/shifts.html' , data=data)
 
 @shifts_bp.route('/calendar')
 def calendar():
-    return render_template('shifts/calendar.html')
+    data = {}
+    data['page_title'] = 'Calendario de turnos'
+    return render_template('shifts/calendar.html', data=data)
 
 @shifts_bp.route('/request')
 def request_shift():
-    return render_template('shifts/request_shift.html')
+    data = {}
+    data['page_title'] = 'Solicitar cambio de turno'
+    return render_template('shifts/request_shift.html', data=data)
 
 @shifts_bp.route('/approve')
 def approve():
-    return render_template('shifts/approve.html')
-# Compare this snippet from opticall/application/routes/monitoring.py:
+    data = {}
+    data['page_title'] = 'Aprobar o rechazar cambios de turno'
+    return render_template('shifts/approve.html', data=data)
+
+@shifts_bp.route('/history')
+def shift_history():
+    data = {}
+    data['page_title'] = 'Historial de turnos'
+    return render_template('shifts/shift_history.html', data=data)

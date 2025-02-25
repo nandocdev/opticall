@@ -22,16 +22,24 @@ monitoring_bp = Blueprint('monitoring', __name__)
 
 @monitoring_bp.route('/')
 def home():
-    return render_template('monitoring/monitoring.html')
+    data = {}
+    data['page_title'] = 'Monitoreo en tiempo real'
+    return render_template('monitoring/monitoring.html', data=data)
 
 @monitoring_bp.route('alerts')
 def alerts():
-    return render_template('monitoring/alerts.html')
+    data = {}
+    data['page_title'] = 'Alertas'
+    return render_template('monitoring/alerts.html', data=data)
 
 @monitoring_bp.route('/agents')
 def agents():
-    return render_template('monitoring/agents.html')
+    data = {}
+    data['page_title'] = 'Estado de Agentes'
+    return render_template('monitoring/agents.html', data=data)
 
 @monitoring_bp.route('/summary')
-def summary():
-    return render_template('monitoring/summary.html')
+def summary(): 
+    data = {}
+    data['page_title'] = 'Resumen de estadísticas'
+    return render_template('monitoring/summary.html', data=data)

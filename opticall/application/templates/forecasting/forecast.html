@@ -1,0 +1,66 @@
+
+{% extends '_layouts/default/index.layout.html' %}
+{% block content %}
+<!-- Página principal del módulo de pronóstico -->
+
+<!-- Start content here -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Pronóstico</h1>
+            <p>En esta sección se podrá realizar el pronóstico de la demanda de los productos de la empresa.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Productos</h2>
+            <p>Seleccione el producto para el cual desea realizar el pronóstico.</p>
+            <div class="form-group
+                {% if errors.product_id %}
+                    has-error
+                {% endif %}">
+                <label for="product_id">Producto</label>
+                <select class="form-control" id="product_id" name="product_id">
+                    <option value="">Seleccione un producto</option>
+                    {% for product in products %}
+                        <option value="{{ product.id }}">{{ product.name }}</option>
+                    {% endfor %}
+                </select>
+                {% if errors.product_id %}
+                    <span class="help-block
+                        {% if errors.product_id %}
+                            has-error
+                        {% endif %}">{{ errors.product_id }}</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Periodo</h2>
+            <p>Seleccione el periodo para el cual desea realizar el pronóstico.</p>
+            <div class="form-group
+                {% if errors.period %}
+                    has-error
+                {% endif %}">
+                <label for="period">Periodo</label>
+                <select class="form-control" id="period" name="period">
+                    <option value="">Seleccione un periodo</option>
+                    <option value="1">1 mes</option>
+                    <option value="3">3 meses</option>
+                    <option value="6">6 meses</option>
+                    <option value="12">12 meses</option>
+                </select>
+                {% if errors.period %}
+                    <span class="help-block
+                        {% if errors.period %}
+                            has-error
+                        {% endif %}">{{ errors.period }}</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+
+<!-- /End content here -->
+{% endblock %}

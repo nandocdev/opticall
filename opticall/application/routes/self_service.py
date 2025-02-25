@@ -22,17 +22,25 @@ self_service_bp = Blueprint('self_service', __name__)
 
 @self_service_bp.route('/')
 def home():
-    return render_template('self_service/self_service.html')
+    data = {}
+    data['page_title'] = 'Portal de autoservicio'
+    return render_template('self_service/self_service.html', data=data)
 
 @self_service_bp.route('/schedule')
 def schedule():
-    return render_template('self_service/schedule.html')
+    data = {}
+    data['page_title'] = 'Ver horario personal'
+    return render_template('self_service/schedule.html', data=data)
 
 @self_service_bp.route('/request-shift')
 def request_shift():
-    return render_template('self_service/request_shift.html')
+    data = {}
+    data['page_title'] = 'Solicitar cambio de turno'
+    return render_template('self_service/request_shift.html', data=data)
 
 @self_service_bp.route('/info')
 def info():
-    return render_template('self_service/info.html')
+    data = {}
+    data['page_title'] = 'Información relevante'
+    return render_template('self_service/info.html', data=data)
 # Compare this snippet from opticall/application/routes/admin.py:

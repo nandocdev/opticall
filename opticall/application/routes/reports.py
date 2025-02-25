@@ -21,13 +21,19 @@ reports_bp = Blueprint('reports', __name__)
 
 @reports_bp.route('/')
 def home():
-    return render_template('reports/reports.html')
+    data = {}
+    data['page_title'] = 'Informes y reportes'
+    return render_template('reports/reports.html', data=data)
 
 @reports_bp.route('/kpi')
 def kpi():
-    return render_template('reports/kpi.html')
+    data = {}
+    data['page_title'] = 'Informes KPI'
+    return render_template('reports/kpi.html', data=data)
 
 @reports_bp.route('/export')
 def export():
-    return render_template('reports/export.html')
+    data = {}
+    data['page_title'] = 'Exportar informes'
+    return render_template('reports/export.html', data=data)
 # Compare this snippet from opticall/application/routes/auth.py:

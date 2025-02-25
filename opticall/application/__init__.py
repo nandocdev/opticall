@@ -17,6 +17,7 @@ from opticall.application.routes.reports import reports_bp
 from opticall.application.routes.scheduling import scheduling_bp
 from opticall.application.routes.self_service import self_service_bp
 from opticall.application.routes.shifts import shifts_bp
+from opticall.application.routes.shared import shared_bp
 
 
 def create_app():
@@ -31,5 +32,6 @@ def create_app():
     app.register_blueprint(scheduling_bp, url_prefix="/scheduling")
     app.register_blueprint(self_service_bp, url_prefix="/self-service")
     app.register_blueprint(shifts_bp, url_prefix="/shifts")
+    app.register_blueprint(shared_bp, url_prefix="/shared")
 
     return app

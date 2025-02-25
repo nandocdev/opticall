@@ -1,0 +1,38 @@
+{% extends '_layouts/default/index.layout.html' %}
+{% block content %}
+<!-- Insert your HTML markup or other content here -->
+ 
+    <div class="row">
+      <div class="col-lg-12 col-md-12 mx-auto">
+        <div class="card mt-4">
+          <div class="card-header p-3">
+            <h5 class="mb-0">Configuración del Pronóstico</h5>
+          </div>
+          <div class="card-body p-3">
+            <p class="text-sm">
+              Aquí puedes configurar las variables y parámetros para generar el pronóstico de demanda de llamadas.
+            </p>
+
+            <form method="POST" action="{{ url_for('forecasting.configure') }}" enctype="multipart/form-data">
+              <div class="input-group input-group-static mb-3">
+                  <label>Periodos a pronosticar (en horas):</label>
+                  <input type="number" class="form-control" name="periods" id="periods" required>
+              </div>
+              <div class="input-group input-group-static mb-3">
+                  <label for="date_column">Nombre de la Columna de Fechas:</label>
+                  <input type="text" class="form-control" name="date_column" id="date_column" value="ds">
+              </div>
+              <div class="input-group input-group-static mb-3">
+                  <label for="value_column">Nombre de la Columna de Valores:</label>
+                  <input type="text" class="form-control" name="value_column" id="value_column" value="y">
+              </div>
+              <button type="submit" class="btn btn-success">
+                Generar Pronóstico
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+<!-- /End content here -->
+{% endblock %}

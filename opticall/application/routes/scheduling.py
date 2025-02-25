@@ -25,25 +25,35 @@ scheduling_bp = Blueprint('schedule', __name__)
 
 @scheduling_bp.route('/')
 def home():
-    return render_template('scheduling/scheduling.html')
+    data = {}
+    data['page_title'] = 'Planificación de llamadas'
+    return render_template('scheduling/scheduling.html', data=data)
 
 
 @scheduling_bp.route('/rules')
 def rules():
-    return render_template('scheduling/rules.html')
+    data = {}
+    data['page_title'] = 'Configuración de reglas'
+    return render_template('scheduling/rules.html', data=data)
 
 
 @scheduling_bp.route('/generate')
 def generate():
-    return render_template('scheduling/generate.html')
+    data = {}
+    data['page_title'] = 'Generar horario de trabajo'
+    return render_template('scheduling/generate.html', data=data)
 
 
 @scheduling_bp.route('/results')
 def results():
-    schedule_data = {}
-    return render_template('scheduling/results.html', schedule_data=schedule_data)
+    
+    data = {}
+    data['page_title'] = 'Resultados de horarios generados'
+    return render_template('scheduling/results.html', data=data)
 
 
 @scheduling_bp.route('/logs')
 def logs():
-    return render_template('scheduling/logs.html')
+    data = {}
+    data['page_title'] = 'Registros de planificación'
+    return render_template('scheduling/logs.html', data=data)

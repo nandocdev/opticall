@@ -26,11 +26,11 @@ auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/login')
 def login():
-    return render_template('/login.html')
+    return render_template('auth/login.html')
 
 @auth_bp.route('/register')
 def register():
-    return render_template('/register.html')
+    return render_template('auth/register.html')
 
 @auth_bp.route('/logout')
 def logout():
@@ -38,16 +38,16 @@ def logout():
 
 @auth_bp.route('/forgot-password')
 def forgot_password():
-    return render_template('/forgot-password.html')
+    return render_template('auth/forgot-password.html')
 
 @auth_bp.route('/reset-password')
 def reset_password():
-    return render_template('/reset-password.html')
+    return render_template('auth/reset-password.html')
 
 @auth_bp.route('/users')
 def users():
-    return render_template('/users.html')
+    return render_template('auth/users.html')
 
 @auth_bp.route('/users/<id>')
 def user(id):
-    return render_template('/user.html')
+    return render_template('auth/user.html')
