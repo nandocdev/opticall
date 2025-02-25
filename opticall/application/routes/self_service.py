@@ -18,21 +18,21 @@
 
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 
-self_service = Blueprint('self_service', __name__)
+self_service_bp = Blueprint('self_service', __name__)
 
-@self_service.route('/')
+@self_service_bp.route('/')
 def home():
     return render_template('self_service/self_service.html')
 
-@self_service.route('/schedule')
+@self_service_bp.route('/schedule')
 def schedule():
     return render_template('self_service/schedule.html')
 
-@self_service.route('/request-shift')
+@self_service_bp.route('/request-shift')
 def request_shift():
     return render_template('self_service/request_shift.html')
 
-@self_service.route('/info')
+@self_service_bp.route('/info')
 def info():
     return render_template('self_service/info.html')
 # Compare this snippet from opticall/application/routes/admin.py:

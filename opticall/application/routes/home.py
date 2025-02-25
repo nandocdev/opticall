@@ -9,8 +9,9 @@
 
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 
-home = Blueprint('home', __name__)
+home_bp = Blueprint('home', __name__)
 
-@home.route('/')
+
+@home_bp.route('/')
 def index():
     return render_template('home/index.html')

@@ -4,7 +4,7 @@
 # @subpackage  routes
 # @file        auth
 # @Date        2025-02-25 10:58:35
-# @Author      Fernando Castillo (ferncastillo@css.gob.pa)
+# @auth_bpor      Fernando Castillo (ferncastillo@css.gob.pa)
 # @Description Rutas que generan vistas de autenticación y autorización de usuarios
 """
     ## **🔐 auth.py** (Autenticación y autorización)
@@ -22,32 +22,32 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 
 
-auth = Blueprint('auth', __name__)
+auth_bp = Blueprint('auth', __name__)
 
-@auth.route('/login')
+@auth_bp.route('/login')
 def login():
     return render_template('/login.html')
 
-@auth.route('/register')
+@auth_bp.route('/register')
 def register():
     return render_template('/register.html')
 
-@auth.route('/logout')
+@auth_bp.route('/logout')
 def logout():
     return redirect(url_for('auth.login'))
 
-@auth.route('/forgot-password')
+@auth_bp.route('/forgot-password')
 def forgot_password():
     return render_template('/forgot-password.html')
 
-@auth.route('/reset-password')
+@auth_bp.route('/reset-password')
 def reset_password():
     return render_template('/reset-password.html')
 
-@auth.route('/users')
+@auth_bp.route('/users')
 def users():
     return render_template('/users.html')
 
-@auth.route('/users/<id>')
+@auth_bp.route('/users/<id>')
 def user(id):
     return render_template('/user.html')

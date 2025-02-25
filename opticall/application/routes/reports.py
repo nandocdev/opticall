@@ -17,17 +17,17 @@
 
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 
-reports = Blueprint('reports', __name__)
+reports_bp = Blueprint('reports', __name__)
 
-@reports.route('/')
+@reports_bp.route('/')
 def home():
     return render_template('reports/reports.html')
 
-@reports.route('/kpi')
+@reports_bp.route('/kpi')
 def kpi():
     return render_template('reports/kpi.html')
 
-@reports.route('/export')
+@reports_bp.route('/export')
 def export():
     return render_template('reports/export.html')
 # Compare this snippet from opticall/application/routes/auth.py:

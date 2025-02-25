@@ -18,21 +18,21 @@
 
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 
-shifts = Blueprint('shifts', __name__)
+shifts_bp = Blueprint('shifts', __name__)
 
-@shifts.route('/')
+@shifts_bp.route('/')
 def home():
     return render_template('shifts/shifts.html')
 
-@shifts.route('/calendar')
+@shifts_bp.route('/calendar')
 def calendar():
     return render_template('shifts/calendar.html')
 
-@shifts.route('/request')
+@shifts_bp.route('/request')
 def request_shift():
     return render_template('shifts/request_shift.html')
 
-@shifts.route('/approve')
+@shifts_bp.route('/approve')
 def approve():
     return render_template('shifts/approve.html')
 # Compare this snippet from opticall/application/routes/monitoring.py:

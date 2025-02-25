@@ -18,20 +18,20 @@
 
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 
-monitoring = Blueprint('monitoring', __name__)
+monitoring_bp = Blueprint('monitoring', __name__)
 
-@monitoring.route('/')
+@monitoring_bp.route('/')
 def home():
     return render_template('monitoring/monitoring.html')
 
-@monitoring.route('alerts')
+@monitoring_bp.route('alerts')
 def alerts():
     return render_template('monitoring/alerts.html')
 
-@monitoring.route('/agents')
+@monitoring_bp.route('/agents')
 def agents():
     return render_template('monitoring/agents.html')
 
-@monitoring.route('/summary')
+@monitoring_bp.route('/summary')
 def summary():
     return render_template('monitoring/summary.html')

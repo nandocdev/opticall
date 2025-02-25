@@ -18,22 +18,22 @@
 
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 
-forecasting = Blueprint('forecasting', __name__)
+forecasting_bp = Blueprint('forecasting', __name__)
 
-@forecasting.route('/')
+@forecasting_bp.route('/')
 def forecast():
     return render_template('forecasting/.html')
 
-@forecasting.route('/upload')
+@forecasting_bp.route('/upload')
 def upload():
     return render_template('forecasting/upload.html')
 
-@forecasting.route('/results')
+@forecasting_bp.route('/results')
 def results():
     forecast_data = {}
     return render_template('forecasting/results.html', forecast_data=forecast_data)
 
-@forecasting.route('/configure')
+@forecasting_bp.route('/configure')
 def configure():
     return render_template('forecasting/configure.html')
 

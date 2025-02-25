@@ -7,7 +7,9 @@
 # @Author      Fernando Castillo (ferncastillo@css.gob.pa)
 # @Description 
 
-from opticall.application import app
+from opticall.application import create_app
 
-if __name__ == '__main__':
+app = create_app()
+
+if __name__ == "__main__":
     app.run(debug=True)
