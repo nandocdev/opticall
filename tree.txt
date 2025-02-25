@@ -2,17 +2,83 @@
 ├── opticall
 │   ├── application
 │   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   └── __init__.cpython-313.pyc
 │   │   ├── routes
+│   │   │   ├── auth.py
+│   │   │   ├── forecasting.py
+│   │   │   ├── home.py
+│   │   │   ├── __init__.py
+│   │   │   ├── monitoring.py
+│   │   │   ├── __pycache__
+│   │   │   │   ├── auth.cpython-313.pyc
+│   │   │   │   ├── forecasting.cpython-313.pyc
+│   │   │   │   ├── home.cpython-313.pyc
+│   │   │   │   ├── __init__.cpython-313.pyc
+│   │   │   │   ├── monitoring.cpython-313.pyc
+│   │   │   │   ├── reports.cpython-313.pyc
+│   │   │   │   ├── scheduling.cpython-313.pyc
+│   │   │   │   ├── self_service.cpython-313.pyc
+│   │   │   │   └── shifts.cpython-313.pyc
+│   │   │   ├── reports.py
+│   │   │   ├── scheduling.py
+│   │   │   ├── self_service.py
+│   │   │   └── shifts.py
 │   │   ├── static
 │   │   └── templates
+│   │       ├── auth
+│   │       │   ├── forgot-password.html
+│   │       │   ├── login.html
+│   │       │   ├── register.html
+│   │       │   ├── reset-password.html
+│   │       │   ├── user.html
+│   │       │   └── users.html
+│   │       ├── forecasting
+│   │       │   ├── configure.html
+│   │       │   ├── forecast.html
+│   │       │   ├── results.html
+│   │       │   └── upload.html
+│   │       ├── home
+│   │       │   └── index.html
+│   │       ├── index.html
+│   │       ├── _layouts
+│   │       ├── monitoring
+│   │       │   ├── agents.html
+│   │       │   ├── alerts.html
+│   │       │   ├── monitoring.html
+│   │       │   └── summary.html
+│   │       ├── reports
+│   │       │   ├── export.html
+│   │       │   ├── kpi.html
+│   │       │   └── reports.html
+│   │       ├── scheduling
+│   │       │   ├── generate.html
+│   │       │   ├── logs.html
+│   │       │   ├── results.html
+│   │       │   ├── rules.html
+│   │       │   └── scheduling.html
+│   │       ├── self_service
+│   │       │   ├── info.html
+│   │       │   ├── request_shift.html
+│   │       │   ├── schedule.html
+│   │       │   └── self_service.html
+│   │       └── shifts
+│   │           ├── approve.html
+│   │           ├── calendar.html
+│   │           ├── request_shift.html
+│   │           └── shifts.html
 │   ├── __init__.py
 │   ├── __main__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   └── __main__.cpython-313.pyc
 │   └── src
 │       ├── __init__.py
 │       ├── modules
 │       └── shared
+├── poetry.lock
 ├── pyproject.toml
 ├── README.md
 └── tree.txt
 
-9 directories, 7 files
+21 directories, 61 files
