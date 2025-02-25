@@ -1,0 +1,28 @@
+[project]
+name = "opticall"
+version = "0.1.0"
+description = "Sistema de Gestión de Workforce para Centros de Contacto"
+authors = [
+    {name = "Fernando castillo",email = "ferncastillo@css.gob.pa"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flask (>=3.1.0,<4.0.0)",
+    "flask-login (>=0.6.3,<0.7.0)",
+    "sqlalchemy (>=2.0.38,<3.0.0)",
+    "prophet (>=1.1.6,<2.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "numpy (>=2.2.3,<3.0.0)",
+    "matplotlib (>=3.10.0,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
