@@ -19,12 +19,19 @@
 │   │   │   │   ├── reports.cpython-313.pyc
 │   │   │   │   ├── scheduling.cpython-313.pyc
 │   │   │   │   ├── self_service.cpython-313.pyc
+│   │   │   │   ├── shared.cpython-313.pyc
 │   │   │   │   └── shifts.cpython-313.pyc
 │   │   │   ├── reports.py
 │   │   │   ├── scheduling.py
 │   │   │   ├── self_service.py
+│   │   │   ├── shared.py
 │   │   │   └── shifts.py
 │   │   ├── static
+│   │   │   └── assets
+│   │   │       ├── css
+│   │   │       ├── fonts
+│   │   │       ├── img
+│   │   │       └── js
 │   │   └── templates
 │   │       ├── auth
 │   │       │   ├── forgot-password.html
@@ -42,6 +49,16 @@
 │   │       │   └── index.html
 │   │       ├── index.html
 │   │       ├── _layouts
+│   │       │   ├── authentication
+│   │       │   │   └── index.layout.html
+│   │       │   ├── default
+│   │       │   │   ├── index.layout.html
+│   │       │   │   └── partials
+│   │       │   │       ├── aside.partial.html
+│   │       │   │       ├── footer.partial.html
+│   │       │   │       ├── navbar.partial.html
+│   │       │   │       └── settings.partial.html
+│   │       │   └── errors
 │   │       ├── monitoring
 │   │       │   ├── agents.html
 │   │       │   ├── alerts.html
@@ -67,6 +84,11 @@
 │   │           ├── calendar.html
 │   │           ├── request_shift.html
 │   │           └── shifts.html
+│   ├── config
+│   │   ├── config.py
+│   │   └── __init__.py
+│   ├── doc
+│   │   └── autenticacion.md
 │   ├── __init__.py
 │   ├── __main__.py
 │   ├── __pycache__
@@ -75,10 +97,82 @@
 │   └── src
 │       ├── __init__.py
 │       ├── modules
+│       │   ├── auth
+│       │   │   ├── application
+│       │   │   │   ├── __init__.py
+│       │   │   │   ├── premission
+│       │   │   │   │   ├── asignar_permiso_use_case.py
+│       │   │   │   │   ├── eliminar_permiso_use_case.py
+│       │   │   │   │   └── listar_permiso_usuario_use_case.py
+│       │   │   │   ├── profile
+│       │   │   │   ├── role
+│       │   │   │   └── user
+│       │   │   ├── domain
+│       │   │   │   ├── entities
+│       │   │   │   │   ├── __init__.py
+│       │   │   │   │   ├── permission.py
+│       │   │   │   │   ├── profile.py
+│       │   │   │   │   ├── role.py
+│       │   │   │   │   └── user.py
+│       │   │   │   ├── __init__.py
+│       │   │   │   ├── repositories
+│       │   │   │   │   ├── __init__.py
+│       │   │   │   │   ├── permission_repository.py
+│       │   │   │   │   ├── profile_repository.py
+│       │   │   │   │   ├── role_repository.py
+│       │   │   │   │   └── user_repository.py
+│       │   │   │   └── value_objects
+│       │   │   │       ├── __init__.py
+│       │   │   │       └── password_value_object.py
+│       │   │   ├── infrastructure
+│       │   │   │   ├── __init__.py
+│       │   │   │   └── repositories
+│       │   │   │       ├── sqlalchemy_permission_repository.py
+│       │   │   │       ├── sqlalchemy_profile_repository.py
+│       │   │   │       ├── sqlalchemy_role_repository.py
+│       │   │   │       └── sqlalchemy_user_repository.py
+│       │   │   └── __init__.py
+│       │   ├── location
+│       │   │   ├── application
+│       │   │   │   └── __init__.py
+│       │   │   ├── domain
+│       │   │   │   └── __init__.py
+│       │   │   ├── infrastructure
+│       │   │   │   └── __init__.py
+│       │   │   └── __init__.py
+│       │   ├── logs
+│       │   │   ├── application
+│       │   │   │   └── __init__.py
+│       │   │   ├── domain
+│       │   │   │   └── __init__.py
+│       │   │   ├── infrastructure
+│       │   │   │   └── __init__.py
+│       │   │   └── __init__.py
+│       │   ├── organization
+│       │   │   ├── application
+│       │   │   │   └── __init__.py
+│       │   │   ├── domain
+│       │   │   │   └── __init__.py
+│       │   │   ├── infrastructure
+│       │   │   │   └── __init__.py
+│       │   │   └── __init__.py
+│       │   └── rh
+│       │       ├── application
+│       │       │   └── __init__.py
+│       │       ├── domain
+│       │       │   └── __init__.py
+│       │       ├── infrastructure
+│       │       │   └── __init__.py
+│       │       └── __init__.py
+│       ├── __pycache__
+│       │   └── __init__.cpython-313.pyc
 │       └── shared
+│           └── services
+│               ├── avatarSVG.py
+│               ├── database.py
+│               └── __pycache__
+│                   └── avatarSVG.cpython-313.pyc
 ├── poetry.lock
 ├── pyproject.toml
-├── README.md
-└── tree.txt
+└── README.md
 
-21 directories, 61 files
