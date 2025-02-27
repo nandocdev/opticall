@@ -8,7 +8,7 @@
 # @Description 
 
 from flask import Blueprint, render_template, redirect, url_for, request, flash, Response
-from opticall.src.shared.services.avatarSVG import AvatarSVG
+from opticall.src.shared.services.avatar_service import AvatarService
 
 shared_bp = Blueprint('shared', __name__)
 
@@ -16,5 +16,5 @@ shared_bp = Blueprint('shared', __name__)
 def dynamic_avatar():
     name = request.args.get('name', 'Fernando')
     lastname = request.args.get('lastname', 'Castillo')
-    avatar = AvatarSVG(name, lastname)
+    avatar = AvatarService(name, lastname)
     return Response(avatar.generate(), mimetype='image/svg+xml')

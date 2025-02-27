@@ -3,9 +3,9 @@
 # @package     src/shared
 # @subpackage  services
 # @file        database
-# @Date        2025-02-25 22:55:32
+# @Date        2025-02-27 09:41:02
 # @Author      Fernando Castillo (ferncastillo@css.gob.pa)
-# @Description clase de implementacion de base de datos con sqlalchemy
+# @Description 
 
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
@@ -40,7 +40,6 @@ def get_db() -> Generator[Session, None, None]:
         yield db
     finally:
         db.close()
-
 
 
 @contextmanager
