@@ -8,7 +8,6 @@
 # @Description 
 
 from opticall.application import create_app
-from dotenv import load_dotenv
 import os
 
 app = create_app()
